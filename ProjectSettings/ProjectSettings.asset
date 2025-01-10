@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: 00000000000000000000000000000000
+  productGUID: 7dacc39f6c7d2464996a554ffbe7d001
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -966,7 +966,7 @@ PlayerSettings:
   cloudProjectId: 47138ad1-c1eb-4e9f-9c53-302266d5f996
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
+  projectName: My project
   organizationId: madcamp8
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
