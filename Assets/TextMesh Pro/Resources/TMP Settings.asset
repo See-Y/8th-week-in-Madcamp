@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TMP Settings
   m_EditorClassIdentifier: 
   assetVersion: 2
-  m_TextWrappingMode: 1
+  m_TextWrappingMode: 0
   m_enableKerning: 1
   m_ActiveFontFeatures: 00000000
   m_enableExtraPadding: 0
@@ -33,20 +33,23 @@ MonoBehaviour:
   m_defaultTextMeshProUITextContainerSize: {x: 200, y: 50}
   m_autoSizeTextContainer: 0
   m_IsTextObjectScaleStatic: 0
-  m_fallbackFontAssets: []
+  m_fallbackFontAssets:
+  - {fileID: 11400000, guid: cc47741564acb0948b50c74cbd719576, type: 2}
+  - {fileID: 11400000, guid: 02e85d09a4534eb4f9647105fec4357f, type: 2}
+  - {fileID: 11400000, guid: 8dbc34e4b405108489fa68d3554c22db, type: 2}
+  - {fileID: 11400000, guid: ffac94960a1b0ac4383349fb77d1f356, type: 2}
+  - {fileID: 11400000, guid: 758668f34bbb13041b7ef4aec820d09f, type: 2}
+  - {fileID: 11400000, guid: f573fd08b29e234449174776fb3c0101, type: 2}
   m_matchMaterialPreset: 1
-  m_HideSubTextObjects: 0
-  m_defaultSpriteAsset: {fileID: 11400000, guid: c41005c129ba4d66911b75229fd70b45,
-    type: 2}
+  m_HideSubTextObjects: 1
+  m_defaultSpriteAsset: {fileID: 11400000, guid: c41005c129ba4d66911b75229fd70b45, type: 2}
   m_defaultSpriteAssetPath: Sprite Assets/
   m_enableEmojiSupport: 1
   m_MissingCharacterSpriteUnicode: 0
   m_EmojiFallbackTextAssets: []
   m_defaultColorGradientPresetsPath: Color Gradient Presets/
-  m_defaultStyleSheet: {fileID: 11400000, guid: f952c082cb03451daed3ee968ac6c63e,
-    type: 2}
+  m_defaultStyleSheet: {fileID: 11400000, guid: f952c082cb03451daed3ee968ac6c63e, type: 2}
   m_StyleSheetsResourcePath: 
   m_leadingCharacters: {fileID: 4900000, guid: d82c1b31c7e74239bff1220585707d2b, type: 3}
-  m_followingCharacters: {fileID: 4900000, guid: fade42e8bc714b018fac513c043d323b,
-    type: 3}
+  m_followingCharacters: {fileID: 4900000, guid: fade42e8bc714b018fac513c043d323b, type: 3}
   m_UseModernHangulLineBreakingRules: 0
