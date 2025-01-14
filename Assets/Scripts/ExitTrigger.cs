@@ -1,33 +1,55 @@
 using UnityEngine;
 using System.Collections; // 코루틴 사용을 위한 네임스페이스
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class ExitTrigger : MonoBehaviour
 {
     public Transform spawnPoint; // 스폰 지점 Transform
+    public TeleportationProvider teleportationProvider;
     public CanvasGroup fadeCanvasGroup; // 화면 페이드 효과를 위한 CanvasGroup
     public float fadeDuration = 1.0f; // 페이드 지속 시간
 
     private bool isFading = false;
 
+    private void Start()
+    {
+        teleportationProvider = FindObjectOfType<TeleportationProvider>();
+        if (teleportationProvider == null)
+        {
+            Debug.LogError("TeleportationProvider not found in the scene.");
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("ExitTrigger OnTriggerEnter");
         // Tag가 "Player"인 오브젝트만 처리
-        if (other.CompareTag("Player") && !isFading)
+        if (other.transform.root.CompareTag("Player") && !isFading)
         {
-            StartCoroutine(FadeAndRespawn(other.gameObject));
+            Debug.Log("ExitTrigger OnTriggerEnter Player");
+            StartCoroutine(FadeAndRespawn(other.transform.root.gameObject));
         }
     }
 
     private IEnumerator FadeAndRespawn(GameObject player)
     {
+        Debug.Log("ExitTrigger FadeAndRespawn");
+        Debug.Log(player.name);
         isFading = true;
 
         // 화면 어두워지기
         yield return StartCoroutine(Fade(1.0f));
 
         // 플레이어를 스폰 지점으로 이동
-        player.transform.position = spawnPoint.position;
-        player.transform.rotation = spawnPoint.rotation;
+        TeleportRequest request = new TeleportRequest
+            {
+                destinationPosition = spawnPoint.position,
+                destinationRotation = Quaternion.identity
+            };
+
+            // 순간이동 실행
+            teleportationProvider.QueueTeleportRequest(request);
+            Debug.Log("Teleporting player to: " + spawnPoint.position);
 
         // 현재 level과 current_stage 값을 저장
         int previousLevel = GameManager.Instance.level;
