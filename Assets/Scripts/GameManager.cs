@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
 
     public void NextStage()
     {
-        if (level < 8)
+        if (level < 7)
         {
             level++;
             current_stage = GetRandomStage();
