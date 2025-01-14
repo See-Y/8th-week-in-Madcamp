@@ -4,6 +4,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public GameObject player;
+    public GameObject stage1;
 
     // Stage Enum
     public enum Stage
@@ -19,18 +20,6 @@ public class GameManager : MonoBehaviour
         Stage8
     }
 
-    // Enum에서 랜덤 값을 가져오는 함수
-    public Stage GetRandomStage()
-    {
-        // 모든 Enum 값을 배열로 가져오기
-        Stage[] stages = (Stage[])System.Enum.GetValues(typeof(Stage));
-
-        // 랜덤 인덱스 생성
-        int randomIndex = Random.Range(0, stages.Length);
-
-        // 랜덤 Stage 반환
-        return stages[randomIndex];
-    }
 
     public int level = 0;
     public Stage current_stage = Stage.Stage0;
@@ -46,7 +35,11 @@ public class GameManager : MonoBehaviour
         if (level < 7)
         {
             level++;
-            current_stage = GetRandomStage();
+            current_stage = (Stage)(level);
+            if (current_stage == Stage.Stage1)
+            {
+                stage1.SetActive(true);
+            }
         }
         else
         {
@@ -60,9 +53,4 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
