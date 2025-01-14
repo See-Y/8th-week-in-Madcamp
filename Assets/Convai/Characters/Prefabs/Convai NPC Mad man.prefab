@@ -52,10 +52,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Convai NPC Mad man
       objectReference: {fileID: 0}
-    - target: {fileID: 3669617779723452102, guid: 5666e007c9954504884cda2b0c38e36c, type: 3}
-      propertyPath: m_TagString
-      value: Character
-      objectReference: {fileID: 0}
     - target: {fileID: 6776043385692869676, guid: 5666e007c9954504884cda2b0c38e36c, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.12757719
