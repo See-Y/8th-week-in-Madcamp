@@ -6,11 +6,6 @@ public class ExitTrigger : MonoBehaviour
 {
     public Transform spawnPoint; // 스폰 지점 Transform
     public TeleportationProvider teleportationProvider;
-    public CanvasGroup fadeCanvasGroup; // 화면 페이드 효과를 위한 CanvasGroup
-    public float fadeDuration = 1.0f; // 페이드 지속 시간
-
-    private bool isFading = false;
-
     private void Start()
     {
         teleportationProvider = FindObjectOfType<TeleportationProvider>();
@@ -24,21 +19,17 @@ public class ExitTrigger : MonoBehaviour
     {
         Debug.Log("ExitTrigger OnTriggerEnter");
         // Tag가 "Player"인 오브젝트만 처리
-        if (other.transform.root.CompareTag("Player") && !isFading)
+        if (other.transform.root.CompareTag("Player"))
         {
             Debug.Log("ExitTrigger OnTriggerEnter Player");
-            StartCoroutine(FadeAndRespawn(other.transform.root.gameObject));
+            StartCoroutine(Respawn(other.transform.root.gameObject));
         }
     }
 
-    private IEnumerator FadeAndRespawn(GameObject player)
+    private IEnumerator Respawn(GameObject player)
     {
-        Debug.Log("ExitTrigger FadeAndRespawn");
+        Debug.Log("ExitTrigger Respawn");
         Debug.Log(player.name);
-        isFading = true;
-
-        // 화면 어두워지기
-        yield return StartCoroutine(Fade(1.0f));
 
         // 플레이어를 스폰 지점으로 이동
         TeleportRequest request = new TeleportRequest
@@ -94,28 +85,7 @@ public class ExitTrigger : MonoBehaviour
         {
             Debug.LogWarning($"One or both objects not found: {previousObjectName}, {updatedObjectName}");
         }
-
-        // 화면 밝아지기
-        yield return StartCoroutine(Fade(0.0f));
-
-        isFading = false;
+        // 코루틴 종료를 명시적으로 처리
+        yield return null;
     }
-
-
-
-    private IEnumerator Fade(float targetAlpha)
-    {
-        float startAlpha = fadeCanvasGroup.alpha;
-        float elapsedTime = 0.0f;
-
-        while (elapsedTime < fadeDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            fadeCanvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, elapsedTime / fadeDuration);
-            yield return null;
-        }
-
-        fadeCanvasGroup.alpha = targetAlpha;
-    }
-
 }
