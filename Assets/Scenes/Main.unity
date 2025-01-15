@@ -911,6 +911,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1799295651}
   continueTime: 0.2
+  audioSource: {fileID: 502648883}
+  soundEffect: {fileID: 8300000, guid: 4d64a84ff7320b942b4ba676f96d564c, type: 3}
 --- !u!195 &419193405
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -983,6 +985,11 @@ CapsuleCollider:
   m_Height: 4.961117
   m_Direction: 1
   m_Center: {x: 0, y: 0.38320124, z: -0.22576988}
+--- !u!4 &419193408 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3650b8e3faf2a0b49a06398bfb412146, type: 3}
+  m_PrefabInstance: {fileID: 616939080}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &458458119
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1211,6 +1218,105 @@ PrefabInstance:
       addedObject: {fileID: 1874577698}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eac30aa5e6235fd4a93c3c9f88ef36b1, type: 3}
+--- !u!1001 &502648882
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 419193408}
+    m_Modifications:
+    - target: {fileID: 74617019828490994, guid: 64c2bc3a6b7d671429b750f82a80bbe1, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 74617019828490994, guid: 64c2bc3a6b7d671429b750f82a80bbe1, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 4d64a84ff7320b942b4ba676f96d564c, type: 3}
+    - target: {fileID: 74617019828490994, guid: 64c2bc3a6b7d671429b750f82a80bbe1, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4d64a84ff7320b942b4ba676f96d564c, type: 3}
+    - target: {fileID: 74617019828490994, guid: 64c2bc3a6b7d671429b750f82a80bbe1, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 74617019828490994, guid: 64c2bc3a6b7d671429b750f82a80bbe1, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 4318174234977960859, guid: 29a889ef60669b544a1c9ed57aee0506, type: 2}
+    - target: {fileID: 3885999081279106836, guid: 64c2bc3a6b7d671429b750f82a80bbe1, type: 3}
+      propertyPath: m_Name
+      value: SFXgoose
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013156569660199508, guid: 64c2bc3a6b7d671429b750f82a80bbe1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013156569660199508, guid: 64c2bc3a6b7d671429b750f82a80bbe1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013156569660199508, guid: 64c2bc3a6b7d671429b750f82a80bbe1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013156569660199508, guid: 64c2bc3a6b7d671429b750f82a80bbe1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013156569660199508, guid: 64c2bc3a6b7d671429b750f82a80bbe1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013156569660199508, guid: 64c2bc3a6b7d671429b750f82a80bbe1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013156569660199508, guid: 64c2bc3a6b7d671429b750f82a80bbe1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013156569660199508, guid: 64c2bc3a6b7d671429b750f82a80bbe1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013156569660199508, guid: 64c2bc3a6b7d671429b750f82a80bbe1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013156569660199508, guid: 64c2bc3a6b7d671429b750f82a80bbe1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013156569660199508, guid: 64c2bc3a6b7d671429b750f82a80bbe1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013156569660199508, guid: 64c2bc3a6b7d671429b750f82a80bbe1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013156569660199508, guid: 64c2bc3a6b7d671429b750f82a80bbe1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 64c2bc3a6b7d671429b750f82a80bbe1, type: 3}
+--- !u!82 &502648883 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 74617019828490994, guid: 64c2bc3a6b7d671429b750f82a80bbe1, type: 3}
+  m_PrefabInstance: {fileID: 502648882}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &502648884 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5013156569660199508, guid: 64c2bc3a6b7d671429b750f82a80bbe1, type: 3}
+  m_PrefabInstance: {fileID: 502648882}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &516853156
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,11 +1858,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3650b8e3faf2a0b49a06398bfb412146, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3650b8e3faf2a0b49a06398bfb412146, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 502648884}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3650b8e3faf2a0b49a06398bfb412146, type: 3}
       insertIndex: -1

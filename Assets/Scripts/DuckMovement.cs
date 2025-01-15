@@ -13,6 +13,10 @@ public class EnemyMovement : MonoBehaviour
     private Camera mainCamera;
     private Quaternion lastRotation;  // 마지막 회전 값 저장
 
+    public AudioSource audioSource;
+    public AudioClip soundEffect;
+    private bool isSoundPlaying = false;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -28,6 +32,11 @@ public class EnemyMovement : MonoBehaviour
             isMoving = true;
             moveTimer = continueTime;  // 0.2초 타이머 초기화
             ResumeAnimation();  // 애니메이션 재개
+            if (!isSoundPlaying)
+            {
+                audioSource.PlayOneShot(soundEffect);
+                isSoundPlaying = true;
+            }
         }
 
         if (isMoving)
@@ -40,11 +49,21 @@ public class EnemyMovement : MonoBehaviour
             {
                 isMoving = false;
                 StopMoving();
+                if (isSoundPlaying)
+                {
+                    audioSource.Stop();
+                    isSoundPlaying = false;
+                }
             }
         }
         else
         {
             StopMoving();
+            if (isSoundPlaying)
+            {
+                audioSource.Stop();
+                isSoundPlaying = false;
+            }
         }
     }
 
