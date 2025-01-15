@@ -7,7 +7,7 @@ public class ExitTrigger : MonoBehaviour
     public Transform spawnPoint; // 스폰 지점 Transform
     public TeleportationProvider teleportationProvider;
     public CanvasGroup fadeCanvasGroup; // 화면 페이드 효과를 위한 CanvasGroup
-    public float fadeDuration = 1.0f; // 페이드 지속 시간
+    public float fadeDuration = 0.5f; // 페이드 지속 시간
 
     private bool isFading = false;
 
@@ -56,26 +56,26 @@ public class ExitTrigger : MonoBehaviour
         GameManager.Stage previousStage = GameManager.Instance.current_stage;
 
         // GameManager의 current_stage에 따라 행동 결정
-        if (GameManager.Instance.current_stage == GameManager.Stage.Stage0)
-        {
-            // Stage0이면 Reset 호출
-            GameManager.Instance.Reset();
-            Debug.Log("Stage is Stage0. Reset called.");
-        }
-        else
-        {
+        // if (GameManager.Instance.current_stage == GameManager.Stage.Stage0)
+        // {
+        //     // Stage0이면 Reset 호출
+        //     GameManager.Instance.Reset();
+        //     Debug.Log("Stage is Stage0. Reset called.");
+        // }
+        // else
+        // {
             // Stage0이 아니면 NextStage 호출
             GameManager.Instance.NextStage();
             Debug.Log($"NextStage called. Level: {GameManager.Instance.level}, Current Stage: {GameManager.Instance.current_stage}");
-        }
+        // }
 
         // 변경된 level과 current_stage 값을 저장
         int updatedLevel = GameManager.Instance.level;
         GameManager.Stage updatedStage = GameManager.Instance.current_stage;
 
         // 오브젝트 이름 생성 및 위치 변경
-        string previousObjectName = $"digit{8 - previousLevel}";
-        string updatedObjectName = $"digit{8 - updatedLevel}";
+        string previousObjectName = $"digit{4 - previousLevel}";
+        string updatedObjectName = $"digit{4 - updatedLevel}";
 
         // 이전 오브젝트와 변경된 오브젝트의 참조 가져오기
         GameObject previousObject = GameObject.Find(previousObjectName);

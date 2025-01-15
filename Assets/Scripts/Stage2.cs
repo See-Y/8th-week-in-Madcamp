@@ -1,18 +1,16 @@
 using UnityEngine;
 
-public class Stage1 : MonoBehaviour
+public class Stage2 : MonoBehaviour
 {
-    public GameObject character;
-    //public GameObject Dragon = null;
+    public GameObject Nubjuk;
     public Color targetColor = Color.white;
+    public GameObject character;
+    // public Color targetColor = Color.white;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        character.SetActive(true);
-        //if (Dragon != null)
-        //{
-        //    Dragon.SetActive(true);
-        //}
+        Nubjuk.SetActive(true);
+        character.SetActive(false);
         RenderSettings.ambientLight = targetColor;
     }
 }

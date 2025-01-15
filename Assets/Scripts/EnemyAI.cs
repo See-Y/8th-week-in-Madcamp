@@ -25,6 +25,7 @@ public class EnemyAI : MonoBehaviour
     private float screamTimer;
 
     public AudioSource audioSource; // AudioSource 참조
+    public AudioSource audioSource2; // AudioSource 참조
     public AudioClip soundEffect;   // 재생할 AudioClip
     public AudioClip bgm;   // 재생할 AudioClip
 
@@ -84,8 +85,7 @@ public class EnemyAI : MonoBehaviour
         if (distanceToPlayer <= detectRange)
         {
             currentState = EnemyState.Running;
-            audioSource.PlayOneShot(soundEffect); // 효과음 재생
-            audioSource.PlayOneShot(bgm); // 효과음 재생
+            audioSource2.PlayOneShot(soundEffect); // 효과음 재생
         }
     }
 
@@ -99,7 +99,7 @@ public class EnemyAI : MonoBehaviour
         if (distanceToPlayer > loseRange)
         {
             currentState = EnemyState.Searching;
-            audioSource.Stop(); // 효과음 멈춤
+            audioSource2.Stop(); // 효과음 멈춤
         }
     }
 
