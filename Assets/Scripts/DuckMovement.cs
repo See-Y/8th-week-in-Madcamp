@@ -79,7 +79,6 @@ public class EnemyMovement : MonoBehaviour
 
         // 애니메이션 변경
         animator.SetBool("isChasing", true);
-        animator.SetBool("isIdle", false);
 
         // NavMeshAgent로 플레이어를 추적
         agent.isStopped = false;
@@ -93,10 +92,10 @@ public class EnemyMovement : MonoBehaviour
 
         // 애니메이션 변경
         animator.SetBool("isChasing", false);
-        animator.SetBool("isIdle", true);
 
         // NavMeshAgent 정지
         agent.isStopped = true;
+        GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
     }
 
     private void PauseAnimation()

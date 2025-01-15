@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Game Over");
+            Debug.Log("Game Clear");
         }
     }
 

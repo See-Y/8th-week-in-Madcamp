@@ -7,7 +7,7 @@ public class ExitTrigger : MonoBehaviour
     public Transform spawnPoint; // 스폰 지점 Transform
     public TeleportationProvider teleportationProvider;
     public CanvasGroup fadeCanvasGroup; // 화면 페이드 효과를 위한 CanvasGroup
-    public float fadeDuration = 0.5f; // 페이드 지속 시간
+    public float fadeDuration = 0f; // 페이드 지속 시간
 
     private bool isFading = false;
 
