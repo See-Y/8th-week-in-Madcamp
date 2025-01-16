@@ -1,0 +1,2 @@
+D:\MadCamp\week3\8th-week-in-Madcamp\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\CMakeLists.txt
+D:\MadCamp\week3\8th-week-in-Madcamp\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\src\main\cpp\GameActivity\CMakeLists.txt

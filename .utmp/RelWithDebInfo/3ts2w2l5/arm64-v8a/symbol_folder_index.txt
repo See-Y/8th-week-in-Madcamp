@@ -1,0 +1,1 @@
+D:\MadCamp\week3\8th-week-in-Madcamp\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\cxx\RelWithDebInfo\3ts2w2l5\obj\arm64-v8a

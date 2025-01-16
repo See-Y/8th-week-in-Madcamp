@@ -56,7 +56,6 @@ public class GameManager : MonoBehaviour
             Debug.Log("Game Clear");
             // 게임종료
             Application.Quit();
-            EditorApplication.isPlaying = false;
         }
     }
 
